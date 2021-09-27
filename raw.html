@@ -16,7 +16,7 @@
   <!-- Bootstrap Custom -->
   <link rel="stylesheet" href="css/bootstrap-custom.css">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="css/font-awesome/all.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
   <!-- Decanter -->
   <link rel="stylesheet" href="css/decanter.css">
   <link rel="stylesheet" href="css/decanter-custom.css">
@@ -52,7 +52,7 @@
        
       <div class="su-site-search su-user-menu">
         <ul class="nav justify-content-end">
-          <li class="nav-item"><span class="nav-link">Welcome, Andrew</span></li>
+          <li class="nav-item"><span class="nav-link" id='welcome'></span></li>
           <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="/en/badge" role="button" aria-haspopup="true" aria-expanded="false">English</a>
             <div class="dropdown-menu">
@@ -68,7 +68,7 @@
         <button class="su-main-nav__toggle su-main-nav__toggle--right" aria-expanded="false">Menu</button>
         <ul class="su-main-nav__menu-lv1">
           <li class="su-user-menu">
-              <p>Welcome, Andrew</p>
+              <p id='welcome'></p>
               <ul>
                 <li><a href="/en/badge">English</a></li>
                 <li><a href="/es/badge">Español</a></li>
@@ -117,11 +117,32 @@
 
                     
                                         <!-- Cleared State -->
-                    <div class="access-badge-green">
-                        <h2>Andrew Yang</h2>
+                    <div class="access-badge-green">  
+                      
+                        <h2 id="myname"></h2>
+                        <!-- <img src="check.png" class="center"> -->
                         <div class="h3">CLEARED</div>
                         <div class="h4">for onsite access today</div>
-                        <div class="h3">Sep 26, 2021</div>
+                        <div class="h3" id='todayString'></div>
+
+                        <script>
+                          var url_string = window.location.href; //window.location.href
+                          var url = new URL(url_string);
+                          var c = url.searchParams.get("myname");
+                          console.log(c);
+                          document.getElementById("myname").innerHTML = c;
+                          document.getElementById("welcome").innerHTML = 'Welcome, ' + c.split(' ')[0];
+                        </script>
+
+                        <script>
+                          var today = new Date();
+                          var dateValues = today.toString().split(' ')
+                          m = dateValues[1];
+                          d = dateValues[2];
+                          y = dateValues[3];
+                          document.getElementById('todayString').innerHTML = m + ' ' + d + ', ' + y;
+                        </script>
+
                     </div>
                     
                     

@@ -488,7 +488,7 @@ body.splash .btn-lg {
 
 .access-badge-green h2::after,
 .access-badge-red h2::after {
-    font-family: 'Font Awesome\ 5 Free';
+    font-family: 'Font Awesome 5 Free';
     font-size: 3em;
     text-align: center;
     display: block;
@@ -795,4 +795,3 @@ a[data-toggle=tooltip][target=_blank]:focus {
         border: 3px solid #006CB8;
     }
 }
-
