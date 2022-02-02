@@ -139,6 +139,9 @@
                           var dateValues = today.toString().split(' ')
                           m = dateValues[1];
                           d = dateValues[2];
+                          if (d.charAt(0) == '0') {
+                            d = d.substring(1);
+                          }
                           y = dateValues[3];
                           document.getElementById('todayString').innerHTML = m + ' ' + d + ', ' + y;
                         </script>
